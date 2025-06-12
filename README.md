@@ -1,30 +1,55 @@
-📰 Fake News Detection Using Machine Learning
-📌 Overview
-This project focuses on detecting fake news articles using Natural Language Processing (NLP) and machine learning techniques. The goal is to classify news content as Real or Fake based solely on text. A Naive Bayes model was trained on TF-IDF-transformed text data, achieving around 90% accuracy. A Flask web application was also developed, allowing users to paste news text and instantly receive a prediction.
+# 📰 Fake News Detection Using Machine Learning
 
-🔍 Dataset
-Source: Kaggle - Fake and Real News Dataset
+## 📌 Overview
 
-Description: The dataset contains labeled news articles — real news collected from verified sources and fake news collected from unreliable or satirical websites. It includes fields such as title, text, and label (REAL/FAKE).
+This project aims to detect **fake news articles** using **Natural Language Processing (NLP)** and **machine learning**. The objective is to classify news content as *Real* or *Fake* based solely on the textual information. A **Multinomial Naive Bayes** model was trained on TF-IDF-transformed data, achieving an accuracy of around **90%**. A simple **Flask web app** allows users to input news text and get real-time predictions.
 
-💻 Tools & Libraries
-Python
+---
 
-Pandas, NumPy
+## 🔍 Dataset
 
-NLTK (Natural Language Toolkit)
+- **Source**: [Kaggle - Fake and Real News Dataset](https://www.kaggle.com/clmentbisaillon/fake-and-real-news-dataset)
+- **Description**:
+  - Contains news articles labeled as **REAL** or **FAKE**
+  - Fields include:
+    - `title`: headline of the article
+    - `text`: full article content
+    - `label`: REAL or FAKE
 
-Scikit-learn (TF-IDF, Naive Bayes, model evaluation)
+---
 
-Flask (for web deployment)
+## 💻 Tools & Libraries
 
-📊 Project Stages
-Data Cleaning & Preprocessing (removal of stopwords, punctuation, etc.)
+- **Language**: Python  
+- **Libraries Used**:
+  - `Pandas`, `NumPy` – Data manipulation
+  - `NLTK` – Text preprocessing (stopwords, punctuation removal, tokenization)
+  - `Scikit-learn` – TF-IDF vectorization, Naive Bayes model, evaluation
+  - `Flask` – Web app for live fake news detection
 
-TF-IDF Vectorization of text
+---
 
-Model Training using Multinomial Naive Bayes
+## 📊 Project Stages
 
-Model Evaluation (accuracy, confusion matrix)
+1. **Data Preprocessing**:
+   - Removed punctuation, stopwords
+   - Converted text to lowercase
+   - Tokenized text using `NLTK`
 
-Flask Web App Deployment
+2. **Feature Extraction**:
+   - Transformed text data into numerical features using **TF-IDF Vectorizer**
+   - Used 5000 top terms for vectorization
+
+3. **Model Training**:
+   - Trained a **Multinomial Naive Bayes** model on the TF-IDF vectors
+   - Split the dataset into training and test sets
+
+4. **Model Evaluation**:
+   - Achieved ~90% accuracy
+   - Evaluated using **confusion matrix**, **precision**, **recall**, and **F1-score**
+
+5. **Web Deployment**:
+   - Built a **Flask application**
+   - Users can paste any news article to get a prediction instantly
+
+---
